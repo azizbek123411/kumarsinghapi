@@ -17,4 +17,15 @@ class Model {
 String get fullName{
   return '$nameTitle $firstName $lastName';
 }
+
+factory Model.fromJson(Map<String, dynamic>e){
+  return Model(
+    email: e['email']??"hello",
+    country: e['phone']??"hello",
+    image: e['picture']['medium']??"hello",
+    nameTitle: e['name']['title']??"John Wick",
+    firstName: e['name']['first']??"John Wick",
+    lastName: e['name']['last']??"John Wick",
+  );
+}
 }
